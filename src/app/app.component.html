@@ -1,0 +1,71 @@
+<div class="container">
+  <h1>Angular Components</h1>
+
+  <app-post-form
+    (onAdd)="addPost($event)"
+    (onFilter)="setFilterString($event)"
+  ></app-post-form> 
+  
+  <hr />
+
+  <div *ngIf="posts.length > 0; else empty">
+    <app-post
+      *ngFor="let post of posts | filter: filterString"
+      [post]="post"
+      (onRemove)="removePost($event)"
+      >
+        <div>
+          <small *ngIf="post.text.length > 10; else short">This is loooooong post :)</small>
+          <ng-template #short>
+            <small class="card-size">this is short post ;)</small>
+          </ng-template>
+        </div>
+    </app-post>
+  </div>
+  <ng-template #empty>
+    <h2 class="empty-posts">Your task list is empty! :C</h2>
+  </ng-template>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
+  <h1>Angular Components</h1>
+
+  <app-post-form
+    (onAdd)="updatePosts($event)"
+  ></app-post-form> 
+  
+  <hr />
+
+  <app-post
+    *ngFor="let post of posts"
+    [post] = "post"
+    (onRemove) = "removePost($event)"
+  >
+    <small *ngIf="post.text.length > 10; else short">This is loooooong post :)</small>
+    <ng-template #short>
+      <small>post is short ;c</small>
+    </ng-template>
+  </app-post>
+
+</div> -->

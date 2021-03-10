@@ -1,0 +1,49 @@
+<div>
+    <input type="text" class="form-control" placeholder="Title..."
+        [(ngModel)] = "title"
+        #inputTitle
+    >
+    <input type="text" class="form-control" placeholder="Text..."
+        [(ngModel)] = "text"
+    >
+    <div class="form-actions">
+        <button class="btn" (click)="addPost()">Add post</button>
+        <input type="text" class="form-control" placeholder="Find by...." [(ngModel)] = "filterString" (keyup)="doFilter($event)">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+    <input type="text" class="form-control" placeholder="Title..."
+        [(ngModel)] = "title"
+        #title
+    >
+    <input type="text" class="form-control" placeholder="Text..."
+        [(ngModel)] = "text"
+    >
+    <button class="btn" (click) = "addPost()">Add post</button>
+</div> -->
